@@ -1,38 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "ores_galore",
+  "id": "oresgalore",
   "version": "${version}",
   "name": "Ores Galore",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Ultimate Compat Mod",
   "authors": [
-    "Me!"
+    "Xel'Bayria"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Xelbayria/OresGalore"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/ores_galore/icon.png",
+  "license": "Supplementaries Team License v1.1",
+  "icon": "logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.xelbayria.fabric.OresGaloreFabric"
+      "net.xelbayria.ores_galore.fabric.OresGaloreFabric"
     ],
-    "client": [
-      "net.xelbayria.fabric.client.OresGaloreFabricClient"
+    "modmenu": [
+      "net.xelbayria.ores_galore.modmenu.ModMenuCompat"
     ]
   },
-  "mixins": [
-    "ores_galore.mixins.json"
-  ],
   "depends": {
-    "fabricloader": ">=0.17.2",
-    "minecraft": "~1.20.1",
-    "java": ">=17",
-    "architectury": ">=9.2.14",
-    "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "fabric": "*",
+    "minecraft": ">=1.20",
+    "moonlight": ">=1.20-2.16.0"
   }
 }

@@ -1,4 +1,4 @@
-package net.xelbayria.fabric.client;
+package net.xelbayria.ores_galore.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

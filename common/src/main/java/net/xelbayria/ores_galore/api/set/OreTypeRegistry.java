@@ -1,4 +1,4 @@
-package net.xelbayria.api.set;
+package net.xelbayria.ores_galore.api.set;
 
 import net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -7,16 +7,15 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.Optional;
 
-import static net.xelbayria.gems_realm.misc.HardcodedBlockType.BLACKLISTED_CRYSTALTYPES;
-import static net.xelbayria.gems_realm.misc.HardcodedBlockType.BLACKLISTED_MODS;
+import static net.xelbayria.ores_galore.api.intergration.HardcodedOreType.BLACKLISTED_ORETYPES;
 
-//@SuppressWarnings("unused")
+@SuppressWarnings("unused")
 public class OreTypeRegistry extends BlockTypeRegistry<OreType> {
 
     public static final OreTypeRegistry INSTANCE = new OreTypeRegistry();
 
     public OreTypeRegistry() {
-        super(OreType.class, "crystal_type");
+        super(OreType.class, "ore_type");
     }
 
     @Override
@@ -34,35 +33,13 @@ public class OreTypeRegistry extends BlockTypeRegistry<OreType> {
         String blockPath = baseRes.getPath();
 
         /// Default
-        if (blockPath.matches("\\w+_block")) {
-            String crystalName = blockPath.replace("_block", ""); // get gemName from namespace:gemName_block
-            ResourceLocation idBlockType = baseRes.withPath(crystalName);
-
-            /// Ensure the detected block is actually CrystalType
-            boolean hasShard = BuiltInRegistries.ITEM.containsKey(
-                    new ResourceLocation(baseRes.getNamespace(), blockPath.replace("block", "shard"))
-            );
-            boolean hasCluster = BuiltInRegistries.ITEM.containsKey(
-                    new ResourceLocation(baseRes.getNamespace(), blockPath.replace("block", "cluster"))
-            );
-            boolean noWoodType = !BuiltInRegistries.BLOCK.containsKey(
-                    new ResourceLocation(baseRes.getNamespace(), blockPath.replace("block", "log"))
-            );
-            boolean noMetalType = !BuiltInRegistries.ITEM.containsKey(
-                    new ResourceLocation(baseRes.getNamespace(), blockPath.replace("block", "ingot"))
-            );
-            boolean noGemType = !BuiltInRegistries.ITEM.containsKey(
-                    new ResourceLocation(baseRes.getNamespace(), blockPath.replace("_block", ""))
-            );
+        if (blockPath.matches("\\w+_ore")) {
+            String oreName = blockPath.replace("_ore", ""); // get oreName from namespace:oreName_ore
+            ResourceLocation idBlockType = baseRes.withPath(oreName);
 
             // Ensure there is no duplicated CrystalType in the list
             if (!valuesReg.containsKey(idBlockType)
-                    && (hasCluster || hasShard)
-                    && noWoodType
-                    && noMetalType
-                    && noGemType
-                    && !BLACKLISTED_CRYSTALTYPES.contains(idBlockType.toString())
-                    && !BLACKLISTED_MODS.contains(baseRes.getNamespace())
+                    && !BLACKLISTED_ORETYPES.contains(idBlockType.toString())
             ) {
                 Optional<Block> opt = BuiltInRegistries.BLOCK.getOptional(baseRes);
 

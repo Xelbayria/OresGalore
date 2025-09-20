@@ -1,4 +1,4 @@
-package net.xelbayria.api;
+package net.xelbayria.ores_galore.api;
 
 import com.mojang.datafixers.util.Pair;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;

@@ -1,8 +1,7 @@
-package net.xelbayria.fabric;
+package net.xelbayria.ores_galore.fabric;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.xelbayria.OresGalore;
+import net.xelbayria.ores_galore.OresGalore;
 
 public final class OresGaloreFabric implements ModInitializer {
     @Override

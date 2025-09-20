@@ -1,10 +1,9 @@
-package net.xelbayria.forge;
+package net.xelbayria.ores_galore.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
-import net.xelbayria.OresGalore;
+import net.xelbayria.ores_galore.OresGalore;
 
 @Mod(OresGalore.MOD_ID)
 public final class OresGaloreForge {

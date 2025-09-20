@@ -1,8 +1,10 @@
-package net.xelbayria.api.intergration;
+package net.xelbayria.ores_galore.api.intergration;
 
 
-import net.xelbayria.api.set.OreTypeRegistry;
+import net.xelbayria.ores_galore.api.set.OreTypeRegistry;
 import org.jetbrains.annotations.ApiStatus;
+
+import java.util.Set;
 
 /**
  * Put all undetected OreType here. The following reasons can be seen via Definition of REASONS
@@ -10,7 +12,9 @@ import org.jetbrains.annotations.ApiStatus;
  **/
 // Put all undetected OreTypes here
 @ApiStatus.Internal
-public class CompatOreType {
+public class HardcodedOreType {
+
+    public static final Set<String> BLACKLISTED_ORETYPES = Set.of();
 
     /* Definition of REASONS:
      *

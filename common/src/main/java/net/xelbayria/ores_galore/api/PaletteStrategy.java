@@ -1,4 +1,4 @@
-package net.xelbayria.api;
+package net.xelbayria.ores_galore.api;
 
 import net.mehvahdjukaar.moonlight.api.resources.textures.Palette;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
